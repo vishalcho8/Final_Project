@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/screenBG"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/edit_name"
+        style="@style/text_view_style"
+        android:hint="Name"
+        android:inputType="textAutoComplete" />
+
+    <EditText
+        android:id="@+id/edit_number"
+        style="@style/text_view_style"
+        android:hint="Number"
+        android:inputType="textAutoComplete" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        style="@style/text_view_style"
+        android:hint="Email (Optional)"
+        android:inputType="textAutoComplete" />
+
+    <Button
+        android:id="@+id/button_save"
+        style="@style/ButtonStyle"
+        android:text="@string/button_save" />
+</LinearLayout>
