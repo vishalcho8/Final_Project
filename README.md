@@ -19,3 +19,5 @@ How to perform Actions:
   
   
   D) To delete all contacts: From options menu select delete all option.
+  
+  E) Switch between light and dark mode: From mobile settings enable or disable battery saver mode.
