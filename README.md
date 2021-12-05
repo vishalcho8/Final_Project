@@ -8,7 +8,14 @@ will be able to choose a contact from the list to edit the details, or delete th
 
 How to perform Actions:
 
+
   A) To create: Click on + icon placed at bottom right corner.
+  
+  
   B) To update: Click the contact
+  
+  
   C) To delete: Swipe right or left the contact name from list.
+  
+  
   D) To delete all contacts: From options menu select delete all option.
