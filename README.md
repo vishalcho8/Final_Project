@@ -20,4 +20,8 @@ How to perform Actions:
   
   D) To delete all contacts: From options menu select delete all option.
   
-  E) Switch between light and dark mode: From mobile settings enable or disable battery saver mode.
+  
+  E) Switch between light and dark mode: From mobile settings enable or disable battery saver mode or any other appropriate option.
+  
+  F) To change the language: Change the language from Mobile settings. App supports English (US) and French (Canada). Default app language will be English (US)
+      Note: French Translations are taken from Google translator. It might not be accurate. 
