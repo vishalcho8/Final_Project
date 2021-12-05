@@ -20,6 +20,11 @@ How to perform Actions:
   
   D) To delete all contacts: From options menu select delete all option.
   
+  E) To dial: Click on contact from list and use Dial button to dial a number.
+  
+  F) To Email: Click on contact from list and use Email button to send email. 
+  Note: One of the Email has to be configured in order to send Email to contact.
+  
   
   E) Switch between light and dark mode: From mobile settings enable or disable battery saver mode or any other appropriate option.
   
