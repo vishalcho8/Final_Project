@@ -21,7 +21,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NewContactActivity"></activity>
+        <activity android:name=".NewContactActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>

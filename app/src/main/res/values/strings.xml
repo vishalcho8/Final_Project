@@ -13,6 +13,7 @@
 
     <string name="hint_word">Word...</string>
     <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
     <string name="empty_not_saved">Contact not saved. Please check if Name and Number field is not empty. </string>
 
     <string name="clear_all_data">Delete all records.</string>

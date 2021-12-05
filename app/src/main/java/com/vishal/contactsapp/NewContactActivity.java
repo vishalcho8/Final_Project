@@ -23,6 +23,7 @@ public class NewContactActivity extends AppCompatActivity {
     private EditText mEditContactNumber;
     private EditText mEditContactEmail;
     private Button buttonSave;
+    private Button buttonCancel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class NewContactActivity extends AppCompatActivity {
         mEditContactNumber = findViewById(R.id.edit_number);
         mEditContactEmail = findViewById(R.id.edit_email);
         buttonSave = findViewById(R.id.button_save);
+        buttonCancel = findViewById(R.id.button_cancel);
         int id = -1 ;
 
         final Bundle extras = getIntent().getExtras();
@@ -82,9 +84,15 @@ public class NewContactActivity extends AppCompatActivity {
                     setResult(RESULT_OK, replyIntent);
                     finish();
                 }
-
-                //finish();
             }
         });
+
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent replyIntent = new Intent();
+                setResult(RESULT_CANCELED, replyIntent);
+                finish();
+                }
+            });
     }
 }
