@@ -44,7 +44,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
     }
 
     // getItemCount() is called many times, and when it is first called,
-    // mWords has not been updated (means initially, it's null, and we can't return null).
+    // mContacts has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount() {
         if (mContacts != null)
@@ -67,6 +67,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         }
     }
 
+    //This will return the position of the contact clicked from the given list.
     public Contact getContactAtPosition (int position) {
         return mContacts.get(position);
     }

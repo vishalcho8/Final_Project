@@ -11,10 +11,15 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
-    <string name="hint_word">Word...</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_number">Number</string>
+    <string name="hint_email">Email (Optional)</string>
     <string name="button_save">Save</string>
     <string name="button_cancel">Cancel</string>
+    <string name="button_dial">Dial</string>
+    <string name="button_email">Email</string>
+    <string name="no_email">Can\'t send an email. Contact does not contain an email address.</string>
     <string name="empty_not_saved">Contact not saved. Please check if Name and Number field is not empty. </string>
-
+    <string name="update_failed">Failed to update contact. Please try again.</string>
     <string name="clear_all_data">Delete all records.</string>
 </resources>

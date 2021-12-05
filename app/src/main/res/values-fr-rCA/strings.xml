@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ApplicationDeContacts</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="first_fragment_label">Premier fragment</string>
+    <string name="second_fragment_label">Deuxième fragment</string>
+    <string name="next">Prochain</string>
+    <string name="previous">Précédent</string>
+    <string name="hello_first_fragment">Bonjour premier fragment</string>
+    <string name="hello_second_fragment">" Bonjour deuxième fragment. Arg : %1$s"</string>
+    <string name="hint_name">Nom</string>
+    <string name="hint_number">Nombre</string>
+    <string name="hint_email">Courriel (facultatif)</string>
+    <string name="button_save">sauvegarder</string>
+    <string name="button_cancel">Annuler</string>
+    <string name="button_dial">Cadran</string>
+    <string name="button_email">E-mail</string>
+    <string name="no_email">Impossible d\'envoyer un e-mail. Le contact ne contient pas d\'adresse e-mail.</string>
+    <string name="empty_not_saved">Contact non enregistré. Veuillez vérifier si le champ Nom et numéro n\'est pas vide.</string>
+    <string name="update_failed">" Échec de la mise à jour du contact. Veuillez réessayer."</string>
+    <string name="clear_all_data">" Supprimer tous les enregistrements."</string>
+</resources>

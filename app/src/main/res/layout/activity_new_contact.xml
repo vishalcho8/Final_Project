@@ -9,25 +9,35 @@
     <EditText
         android:id="@+id/edit_name"
         style="@style/text_view_style"
-        android:hint="Name"
+        android:hint="@string/hint_name"
         android:inputType="textAutoComplete" />
 
     <EditText
         android:id="@+id/edit_number"
         style="@style/text_view_style"
-        android:hint="Number"
+        android:hint="@string/hint_number"
         android:inputType="textAutoComplete" />
 
     <EditText
         android:id="@+id/edit_email"
         style="@style/text_view_style"
-        android:hint="Email (Optional)"
+        android:hint="@string/hint_email"
         android:inputType="textAutoComplete" />
 
     <Button
         android:id="@+id/button_save"
         style="@style/ButtonStyle"
         android:text="@string/button_save" />
+
+    <Button
+        android:id="@+id/button_dial"
+        style="@style/ButtonStyle"
+        android:text="@string/button_dial" />
+
+    <Button
+        android:id="@+id/button_email"
+        style="@style/ButtonStyle"
+        android:text="@string/button_email" />
 
     <Button
         android:id="@+id/button_cancel"

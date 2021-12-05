@@ -1,6 +1,9 @@
 package com.vishal.contactsapp;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import static com.vishal.contactsapp.MainActivity.EXTRA_DATA_ID;
 import static com.vishal.contactsapp.MainActivity.EXTRA_DATA_UPDATE_NAME;
 import static com.vishal.contactsapp.MainActivity.EXTRA_DATA_UPDATE_NUMBER;
@@ -24,6 +29,11 @@ public class NewContactActivity extends AppCompatActivity {
     private EditText mEditContactEmail;
     private Button buttonSave;
     private Button buttonCancel;
+    private Button buttonDial;
+    private Button buttonEmail;
+    String contact_name = "";
+    String contact_number = "";
+    String contact_email = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,15 +44,18 @@ public class NewContactActivity extends AppCompatActivity {
         mEditContactEmail = findViewById(R.id.edit_email);
         buttonSave = findViewById(R.id.button_save);
         buttonCancel = findViewById(R.id.button_cancel);
+        buttonDial = findViewById(R.id.button_dial);
+        buttonEmail = findViewById(R.id.button_email);
+
         int id = -1 ;
 
         final Bundle extras = getIntent().getExtras();
 
-        // If we are passed content, fill it in for the user to edit.
+        // If data present in extras, fill it in for the user to edit.
         if (extras != null) {
-            String contact_name = extras.getString(EXTRA_DATA_UPDATE_NAME, "");
-            String contact_number = extras.getString(EXTRA_DATA_UPDATE_NUMBER,"");
-            String contact_email = extras.getString(EXTRA_DATA_UPDATE_EMAIL,"");
+            contact_name = extras.getString(EXTRA_DATA_UPDATE_NAME, "");
+            contact_number = extras.getString(EXTRA_DATA_UPDATE_NUMBER,"");
+            contact_email = extras.getString(EXTRA_DATA_UPDATE_EMAIL,"");
             if (!contact_name.isEmpty()) {
                 mEditContactName.setText(contact_name);
                 mEditContactName.setSelection(contact_name.length());
@@ -58,9 +71,11 @@ public class NewContactActivity extends AppCompatActivity {
         } // Otherwise, start with empty fields.
 
 
+        //Create new contact or update the existing one.
         buttonSave.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
+                //Name or Number field is empty don't insert contact in table
                 if (TextUtils.isEmpty(mEditContactName.getText()) ||
                         TextUtils.isEmpty(mEditContactNumber.getText())) {
                     Toast.makeText(view.getContext(), R.string.empty_not_saved,
@@ -87,6 +102,7 @@ public class NewContactActivity extends AppCompatActivity {
             }
         });
 
+        //DOnt create or update the contact
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent replyIntent = new Intent();
@@ -94,5 +110,29 @@ public class NewContactActivity extends AppCompatActivity {
                 finish();
                 }
             });
+
+        //Open the dialer with contact number loaded.
+        buttonDial.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                String uri = "tel:" + contact_number.trim() ;
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse(uri));
+                startActivity(intent);
+            }
+        });
+
+        //Open the email page. Send email to person if email address is present. Else show message.
+        buttonEmail.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                if (contact_email.isEmpty()){
+                    Toast.makeText(view.getContext(), R.string.no_email,
+                            Toast.LENGTH_LONG).show();
+                } else{
+                    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + contact_email));
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 }

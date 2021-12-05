@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        //Insert or Update the record based on If and else condition
         if (requestCode == NEW_CONTACT_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             Contact contact = new Contact(data.getStringExtra(NewContactActivity.EXTRA_REPLY_NAME), data.getStringExtra(NewContactActivity.EXTRA_REPLY_NUM), data.getStringExtra(NewContactActivity.EXTRA_REPLY_EMAIL));
             mContactViewModel.insert(contact);
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             if (id != -1) {
                 mContactViewModel.update(new Contact(id, contact_name, contact_num, contact_email));
             } else {
-                Toast.makeText(this, "Failed to update contact. Please try again. ",
+                Toast.makeText(this, "Failed to update contact. Please try again.",
                         Toast.LENGTH_LONG).show();
             }
         } else {
@@ -154,14 +155,9 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        /* if (id == R.id.action_settings) {
-            return true;
-        } */
-
         if (id == R.id.clear_data) {
             // Add a toast just for confirmation
-            Toast.makeText(this, "Clearing the data...",
+            Toast.makeText(this, "Deleting all the contacts..",
                     Toast.LENGTH_SHORT).show();
 
             // Delete the existing data

@@ -9,6 +9,12 @@ import androidx.room.Index;
 import androidx.room.Insert;
 import androidx.room.PrimaryKey;
 
+/*
+    Class that holds all the required fields.
+    These fields are also used to create Table in the rom database.
+
+*/
+
 @Entity(tableName = "Contacts")
 public class Contact {
 
