@@ -2,6 +2,7 @@ package com.vishal.contactsapp;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -48,7 +49,6 @@ public abstract class ContactRoomDatabase extends RoomDatabase {
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {
 
         private final ContactDao mDao;
-        String[] contacts = {"dolphin", "crocodile", "cobra"};
 
         PopulateDbAsync(ContactRoomDatabase db) {
             mDao = db.contactDao();
@@ -61,13 +61,11 @@ public abstract class ContactRoomDatabase extends RoomDatabase {
             // Not needed if you only populate the database
             // when it is first created
             //mDao.deleteAll();
-            // If we have no words, then create the initial list of words
-            /* if (mDao.getAnyWord().length < 1) {
-                for (int i = 0; i <= contacts.length - 1; i++) {
-                    Contact contact = new Contact(contacts[i]);
+            // If we have no contacts, then create the initial list of contacts
+            if (mDao.getAnyContact().length < 1) {
+                    Contact contact = new Contact("Vishal", "513-099-7655", "Vishal@ok.com");
                     mDao.insert(contact);
-                }
-            } */
+            }
             return null;
         }
     }
